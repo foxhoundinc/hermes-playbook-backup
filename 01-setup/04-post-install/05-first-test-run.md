@@ -117,8 +117,8 @@ If you have a real podcast to transcribe, run it through Whisper on NUC.
 
 Then:
 ```bash
-# On Win11:
-type D:\HermesHome\test_summary.txt
+# On Win11 (WSL2):
+cat ~/.hermes/test_summary.txt
 
 # On NUC:
 cat ~/HQ/HERMESHQ/test_summary.txt

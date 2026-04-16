@@ -19,7 +19,7 @@ wsl --install -d Ubuntu
 curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/install.sh | sh
 ```
 
-**Why it works:** WSL2 provides a Linux-compatible environment where Hermes paths and commands behave as designed. Avoid installing Hermes directly in Windows file paths (C:\HermesHome\ etc.) — use WSL2 as the host instead.
+**Why it works:** WSL2 provides a Linux-compatible environment where Hermes paths and commands behave as designed.
 
 ## Claude Max Deprecation (0xJeff, 2026-04-14)
 **Issue:** Anthropic banned agents 1-2 weeks back. Cannot use Hermes with Claude subscription credits anymore.

@@ -9,7 +9,7 @@
 
 ```
 NUC: ~/HQ/HERMESHQ/     ← Source of truth
-Win11: D:\HermesHome\   ← Synced clone
+Win11: D:\HermesHQ\   ← Synced clone (Syncthing target only)
 ```
 
 Verify this is correct:
@@ -89,7 +89,7 @@ echo "syncthing test $(date)" > ~/HQ/HERMESHQ/synctest.txt
 # Wait 10-20 seconds
 
 # On Win11 — check if it arrived
-type D:\HermesHome\synctest.txt
+type D:\HermesHQ\synctest.txt
 
 # Should contain "syncthing test" and today's date
 
@@ -146,11 +146,13 @@ If HERMESHQ is large, prioritize what syncs first:
 
 ---
 
-## Step 7 — Verify Hermes Home on Win11
+## Step 7 — Verify Hermes Home on Win11 (via WSL2)
+
+Hermes runs inside WSL2 — access it via the Linux path:
 
 ```bash
-# On Win11 — check Hermes home
-dir D:\HermesHome\.hermes\
+# From WSL2 terminal — check Hermes home
+ls -la ~/.hermes/
 
 # Should have:
 # - config.yaml
@@ -158,9 +160,6 @@ dir D:\HermesHome\.hermes\
 # - sessions/
 # - memories/
 # - crons/
-
-# If anything is missing, restore from NUC backup:
-# robocopy \\nuc\HQ\HERMESHQ\.hermes D:\HermesHome\.hermes /E
 ```
 
 ---

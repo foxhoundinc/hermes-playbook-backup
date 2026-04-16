@@ -116,18 +116,18 @@ Honcho memory should live on the NUC (source of truth):
 
 ```
 NUC: ~/.honcho/memory/    ← Source of truth
-Win11: D:\HermesHome\.honcho\  ← Via Syncthing
+Win11: D:\HermesHQ\.honcho\  ← Via Syncthing (Syncthing target only)
 ```
 
 If Win11 has its own Honcho:
 
 ```powershell
 # On Win11 — configure Honcho to use Hermes home
-# In PowerShell:
-$env:HONCHO_HOME = "D:\HermesHome\.honcho"
+# On Win11 (PowerShell) — point Honcho to the Syncthing clone:
+$env:HONCHO_HOME = "D:\HermesHQ\.honcho"
 
 # Or edit config.json
-notepad D:\HermesHome\.honcho\config.json
+notepad D:\HermesHQ\.honcho\config.json
 ```
 
 ---
@@ -149,7 +149,7 @@ On Win11, set HONCHO_HOME:
 # In PowerShell:
 [System.Environment]::SetEnvironmentVariable(
     "HONCHO_HOME",
-    "D:\HermesHome\.honcho",
+    "D:\\HermesHQ\\.honcho",
     "User"
 )
 ```

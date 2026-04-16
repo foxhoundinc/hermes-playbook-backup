@@ -8,7 +8,7 @@
 
 ## Full Config Template
 
-Create or edit `C:\HermesHome\.hermes\config.yaml`:
+Create or edit `~/.hermes/config.yaml` inside WSL2:
 
 ```yaml
 # ============================================
@@ -19,8 +19,8 @@ Create or edit `C:\HermesHome\.hermes\config.yaml`:
 # ============================================
 
 hermes:
-  version: "0.80"
-  home: C:\HermesHome
+  version: "0.90"
+  # home defaults to ~/.hermes/ inside WSL2 — no need to set explicitly
 
 # --------------------------------------------
 # MODEL CONFIGURATION — 6 Tiers
@@ -97,8 +97,7 @@ local_llm:
 # TERMINAL
 # --------------------------------------------
 terminal:
-  backend: local        # Windows Terminal, PowerShell 7+
-  workdir: D:\HermesHome
+  backend: local        # WSL2 Linux terminal
 
 # --------------------------------------------
 # TOOLSETS
@@ -172,17 +171,22 @@ systray:
 
 ## Environment Variables
 
-Create `C:\HermesHome\.hermes\.env`:
+Create `~/.hermes/.env` inside WSL2:
+
+```bash
+# Create the .env file
+nano ~/.hermes/.env
+```
 
 ```bash
 # API Keys
-OPENROUTER_API_KEY=sk-or-v1-xxxxx
-GOOGLE_AI_API_KEY=AIzaSyxxxxx
-TELEGRAM_BOT_TOKEN=123456:ABCxxxxx
-DISCORD_BOT_TOKEN=xxxxx
+OPENROUTER_API_KEY=***
+GOOGLE_AI_API_KEY=***
+TELEGRAM_BOT_TOKEN=***
+DISCORD_BOT_TOKEN=***
 
-# Hermes Home (if not set in system)
-HERMES_HOME=D:\HermesHome
+# Hermes Home (WSL2/Linux — no Windows path needed)
+# HERMES_HOME is auto-detected, no need to set manually
 ```
 
 ---

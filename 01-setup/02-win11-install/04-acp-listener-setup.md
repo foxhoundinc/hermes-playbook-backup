@@ -60,7 +60,7 @@ If `authorized_keys` doesn't exist, create it.
 
 ## Step 4 — Configure ACP on Win11
 
-In `D:\HermesHome\.hermes\config.yaml` on Win11:
+In `~/.hermes/config.yaml` on Win11 (inside WSL2):
 
 ```yaml
 acp:

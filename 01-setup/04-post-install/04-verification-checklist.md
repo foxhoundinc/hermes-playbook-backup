@@ -168,7 +168,7 @@ syncthing-cli folder herameshQ
 echo "cross-machine test $(date)" > ~/HQ/HERMESHQ/cross-machine-test.txt
 sleep 15
 # Check on Win11
-ssh -i ~/.ssh/id_ed25519 win11_username@192.168.x.x "type C:\HermesHome\cross-machine-test.txt"
+ssh -i ~/.ssh/id_ed25519 win11_username@192.168.x.x "bash -c 'ls -la ~/.hermes/'"
 # Should show the test content
 
 # Clean up
@@ -181,18 +181,14 @@ rm ~/HQ/HERMESHQ/cross-machine-test.txt
 
 ### 5.1 Hermes Config on Win11
 ```powershell
-# Verify all critical files on Win11
-Test-Path C:\HermesHome\.hermes\config.yaml
-Test-Path C:\HermesHome\.hermes\skills
-Test-Path C:\HermesHome\.hermes\sessions
-# All should return: True
+# From WSL2 on Win11 — verify Hermes home
+bash -c 'ls -la ~/.hermes/'
 ```
 
 ### 5.2 API Keys
 ```powershell
-# Verify keys are present in .env or config
-Select-String -Path C:\HermesHome\.hermes\.env -Pattern "OPENROUTER_API_KEY"
-# Should show key line
+# From WSL2 — verify keys are present in .env
+bash -c 'grep -c OPENROUTER_API_KEY ~/.hermes/.env'
 ```
 
 ---

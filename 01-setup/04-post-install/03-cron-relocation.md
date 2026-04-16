@@ -68,8 +68,8 @@ hermes cron create --name Scanner --schedule "0 7 * * *" --prompt "..."
 Using Hermes cron system on Win11:
 
 ```powershell
-# Navigate to Hermes home
-cd D:\HermesHome
+# Navigate to Hermes home inside WSL2
+cd ~/.hermes
 
 # List current crons
 hermes cron list

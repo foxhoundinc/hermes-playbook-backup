@@ -87,14 +87,14 @@ If `nvidia-smi` fails inside WSL2: see **07-troubleshooting/INBOX.md** → WSL2 
 ## Step 3 - Set Up Ubuntu Inside WSL2
 
 ```bash
-# Create a working directory (replace <you> with your Windows username)
-mkdir -p /mnt/c/HermesHome
-export HERMES_HOME=/mnt/c/HermesHome
+# WSL2 provides Linux environment — no separate Hermes Home on C: needed
+# Hermes will use ~/.hermes/ inside WSL2 by default
 
-# Make it permanent — add to ~/.bashrc
-echo 'export HERMES_HOME=/mnt/c/HermesHome' >> ~/.bashrc
-echo 'export PATH="$HERMES_HOME/hermes-agent/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+# Verify WSL2 is working
+wsl --status
+
+# Install basic tools inside WSL2
+sudo apt update && sudo apt upgrade -y
 ```
 
 ---
