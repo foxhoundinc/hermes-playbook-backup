@@ -145,7 +145,7 @@ Each profile appears as a separate bot on Telegram. To route messages:
 2. Configure each bot token in each profile's config.yaml
 3. Each bot = one team member
 
-See `hermes profile telegram-setup` for the bot creation workflow.
+See `hermes gateway setup` for the bot creation workflow.
 
 ---
 
